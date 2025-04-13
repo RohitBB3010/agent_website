@@ -1,0 +1,48 @@
+@import url('../variables.css');
+
+*{
+    padding: 0;
+    margin : 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 4em 2em 0em;
+    height:5vh;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.5rem;
+}
+  
+.navbar-left img {
+    margin-top: 1rem;
+    width: 100px; 
+    height: auto;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+#insurance{
+    color: var(--primary-blue);
+}
+
+#adda{
+    color : var(--primary-yellow);
+}
+
+.navbar-right{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.3rem;
+}

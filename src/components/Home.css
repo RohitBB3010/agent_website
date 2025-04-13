@@ -1,0 +1,26 @@
+.home{
+    margin : 5em 5em;
+}
+
+.title-home{
+    font-size: 2rem;
+}
+
+#title1{
+    color : var(--primary-yellow);
+}
+
+#title2{
+    color : var(--primary-blue);
+}
+
+.hero-text1, .hero-text2{
+    width : 30rem;
+    font-size : 1.3rem;
+    margin-top : 0.5em;
+}
+
+.hero-text2{
+    font-weight: bold;
+    margin-top: 0;
+}
