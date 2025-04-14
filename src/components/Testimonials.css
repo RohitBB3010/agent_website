@@ -1,0 +1,45 @@
+.testimonials{
+    margin: 5vh 0vw;
+    background-color: rgba(24, 74, 156, 0.1);
+    padding: 5vh 7vw;
+}
+
+.testimonials-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.testimonials-array{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-card{
+    width : 25vw;
+    /* height : 30vh; */
+    display: inline-block;
+    border: 0.1px solid rgba(128, 128, 128, 0.3);
+    padding: 2vh 1vw;
+    margin : 2vh 1.5vw;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.client-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.relation-years{
+    font-size: 1.3rem;
+}
+
+.insurance-type{
+    font-size: 1.2rem;
+}
+
+.testimony{
+    margin: 2vh 0vh;
+}
