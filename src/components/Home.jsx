@@ -1,9 +1,32 @@
 import './Home.css';
 import BannerPhoto1 from '../assets/banner/banner-photo1.jpg';
-import BannerPhoto2 from '../assets/banner/banner-photo2.jpg';
-import BannerPhoto3 from '../assets/banner/banner-photo3.jpg';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { app } from '../firebase.js';
 
 export default function Home() {
+    let years_of_experience = 0, number_of_customers = 0, claim_success_rate = 0;
+    const [stats, setStats] = useState({
+        claims_successful : 0,
+        claims_failed : 0,
+        number_of_customers : 0,
+        years_of_experience : 0
+    });
+    
+    useEffect( () => {
+
+        const fetchStats = async () => {
+            const db = getFirestore(app);
+            const docRef = doc(db, 'site_data', 'stats');
+            const docSnap = await getDoc(docRef);
+
+            setStats(docSnap.data());
+
+            console.log(stats);
+        }
+
+        fetchStats();
+    }, []);
 
     return(
         <div className="home">
@@ -22,9 +45,24 @@ export default function Home() {
                     <img src={BannerPhoto1} alt='banner-photo1' className='banner-photo1'></img>
                     <p className='text-box'> At Insurance Adda, we don’t just sell policies — we protect dreams, safeguard futures, and stand by you when it matters most.</p>
                 </div>
-                <ul className='banner-stats'>
-                    <li> 20+ Years Of Experience</li> 
-                </ul>
+                <div className='banner-stats'>
+                    <ul>
+                        <li id='stat'>{ stats['years_of_experience'] } +</li>
+                        <li> Years Of Experience </li>
+                    </ul>
+                    <ul>
+                        <li id='stat'>{ stats['num_of_customers'] } +</li>
+                        <li> Happy Customers!!! </li>
+                    </ul>
+                    <ul>
+                        <li id='stat'>{
+                            stats.claims_successful + stats.claims_failed > 0 
+                            ? (stats.claims_successful / (stats.claims_successful + stats.claims_failed) * 100).toFixed(2) + " %"
+                            : "N/A"
+                        } +</li>
+                        <li> Years Of Experience </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

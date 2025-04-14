@@ -73,4 +73,21 @@
 
 .banner-stats{
     list-style: none;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 40vw;
+}
+
+.banner-stats ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#stat{
+    font-size: 2rem;
 }
