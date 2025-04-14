@@ -9,7 +9,7 @@
 .navbar-container{
     display: flex;
     justify-content: space-between;
-    padding: 2em 4em 2em 0em;
+    padding: 3em 4em 2em 0em;
     height:5vh;
 }
 
@@ -44,5 +44,5 @@
     list-style: none;
     align-items: center;
     gap: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
