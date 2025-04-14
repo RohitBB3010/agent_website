@@ -1,17 +1,23 @@
 import './Home.css';
-import BannerPhoto1 from '../assets/banner/banner-photo1.jpg';
+import StatPhoto1 from '../assets/banner/banner-photo1.jpg';
+import StatPhoto2 from '../assets/banner/banner-photo2.jpg';
+import StatPhoto3 from '../assets/banner/banner-photo3.jpg';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { app } from '../firebase.js';
 
 export default function Home() {
-    let years_of_experience = 0, number_of_customers = 0, claim_success_rate = 0;
     const [stats, setStats] = useState({
-        claims_successful : 0,
-        claims_failed : 0,
-        number_of_customers : 0,
-        years_of_experience : 0
+        'Claim Success Rate' : 0,
+        'Customers' : 0,
+        'Years of Experience' : 0
     });
+
+    const statImages = [
+        StatPhoto1,
+        StatPhoto2,
+        StatPhoto3
+    ];
     
     useEffect( () => {
 
@@ -20,50 +26,55 @@ export default function Home() {
             const docRef = doc(db, 'site_data', 'stats');
             const docSnap = await getDoc(docRef);
 
-            setStats(docSnap.data());
+            const years_of_experience = docSnap.data()['years_of_experience'];
+            const num_of_customers = docSnap.data()['num_of_customers'];
+            const claim_successful = docSnap.data()['claim_successful'];
+            const claims_failed = docSnap.data()['claims_failed'];
 
-            console.log(stats);
+            const claim_success_rate = ((claim_successful)/(claim_successful + claims_failed))*100;
+
+            setStats({
+                claim_success_rate : Math.floor(claim_success_rate),
+                years_of_experience : years_of_experience,
+                number_of_customers : num_of_customers
+            });
         }
-
         fetchStats();
     }, []);
+
+    useEffect(() => {
+        console.log(stats);
+    }, [stats]);
 
     return(
         <div className="home">
             <div className="content">
                 <div className="title-home">
-                    <div id='title1'>Insure Smart. </div>
-                    <div id='title2'>Live Bold</div>
+                    <div id='title1'>Covered for life’s twists.</div>
+                    <div id='title2'>Free for life’s thrills.</div>
                 </div>
-                <div className='hero-text1'>
-                Welcome to Insurance Adda — your one-stop destination for trusted LIC & Star Health insurance plans. We simplify the process so you can focus on what truly matters : 
+                <div className='hero-text-wrapper'>
+                    <span className='hero-text1'>
+                        Welcome to Insurance Adda — your one-stop destination for trusted LIC & Star Health insurance plans. We simplify the process so you can focus on what truly matters : 
+                    </span>
+                    <span className='hero-text2'> Living Carefree</span>
                 </div>
-                <div className='hero-text2'> Living Carefree</div>
             </div>
             <div className='banner'>
-                <div className='banner-art'>
-                    <img src={BannerPhoto1} alt='banner-photo1' className='banner-photo1'></img>
-                    <p className='text-box'> At Insurance Adda, we don’t just sell policies — we protect dreams, safeguard futures, and stand by you when it matters most.</p>
-                </div>
-                <div className='banner-stats'>
-                    <ul>
-                        <li id='stat'>{ stats['years_of_experience'] } +</li>
-                        <li> Years Of Experience </li>
-                    </ul>
-                    <ul>
-                        <li id='stat'>{ stats['num_of_customers'] } +</li>
-                        <li> Happy Customers!!! </li>
-                    </ul>
-                    <ul>
-                        <li id='stat'>{
-                            stats.claims_successful + stats.claims_failed > 0 
-                            ? (stats.claims_successful / (stats.claims_successful + stats.claims_failed) * 100).toFixed(2) + " %"
-                            : "N/A"
-                        } +</li>
-                        <li> Years Of Experience </li>
-                    </ul>
-                </div>
+                { Object.entries(stats).map(([key, value], index) => (
+                    <StatBar key={index} statData={value} statField={key} imagePath={statImages[index]}/>
+                )) }
             </div>
         </div>
     );
+}
+
+function StatBar({statData, statField, imagePath}){
+
+    return(
+        <div className='stat-component'>
+            <img src = {imagePath} alt={statField} />
+            <div className='hero-text'> {statData} {statField} </div>
+        </div>
+    )
 }
