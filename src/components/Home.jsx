@@ -34,9 +34,9 @@ export default function Home() {
             const claim_success_rate = ((claim_successful)/(claim_successful + claims_failed))*100;
 
             setStats({
-                claim_success_rate : Math.floor(claim_success_rate),
-                years_of_experience : years_of_experience,
-                number_of_customers : num_of_customers
+                "Claim Success Rate" : Math.floor(claim_success_rate),
+                "Years Of Experience" : years_of_experience,
+                "Customers" : num_of_customers
             });
         }
         fetchStats();
@@ -74,7 +74,7 @@ function StatBar({statData, statField, imagePath}){
     return(
         <div className='stat-component'>
             <img src = {imagePath} alt={statField} />
-            <div className='hero-text'> {statData} {statField} </div>
+            <div className='hero-text'> {statData}{statField === 'Claim Success Rate' ? '%' : '+'} {statField} </div>
         </div>
     )
 }

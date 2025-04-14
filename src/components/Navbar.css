@@ -11,9 +11,6 @@
     justify-content: space-between;
     padding: 3em 4em 2em 0em;
     height:5vh;
-    /* margin: 2vh 2vw;
-    background-color: rgba(17, 45, 78, 0.2); 
-    border-radius: 5px; */
 }
 
 .navbar-left {
@@ -47,5 +44,5 @@
     list-style: none;
     align-items: center;
     gap: 2rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
