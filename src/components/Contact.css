@@ -14,11 +14,14 @@
 
 .contact-text{
     font-size: 1.2rem;
+
 }
 
 .contact-space{
     margin-left : 1vw;
-    /* font-style: italic; */
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
 }
 
 .contact-form{
@@ -30,7 +33,7 @@
 }
 
 #input{
-    margin : 4vh 2vw;
+    margin : 2vh 2vw;
     display: flex;
     flex-direction: column;
 }
@@ -50,10 +53,6 @@
     background-color : rgba(217, 217, 217, 0.2);
 }
 
-.divider{
-    border-left : 2px solid #000;
-}
-
 .contact-details{
     width : 45vw;
 }
@@ -71,4 +70,28 @@
 
 .submit-btn:focus{
     cursor:pointer;
+}
+
+.divider{
+    border-left : 1px solid #000;
+    height : 65vh;
+}
+
+.contact-details{
+    margin : 2vh 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details-text{
+    margin-bottom: 5vh;
+}
+
+#detail{
+    font-size : 1.1rem;
+    margin : 3vh 0vw;
+}
+
+.phone-detail{
+    font-weight: bold;
 }
