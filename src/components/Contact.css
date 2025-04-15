@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+
+.contact{
+    margin : 5vh 7vw;
+    height : 80vh;
+}
+
+.contact-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.contact-text{
+    font-size: 1.2rem;
+}
+
+.contact-space{
+    margin-left : 1vw;
+    /* font-style: italic; */
+}
+
+.contact-form{
+    width : 45vw;
+    margin : 2vh 0vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#input{
+    margin : 4vh 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#input input, select{
+    width : 25vw;
+    height : 5vh;
+    padding : 0.5vh 0.5vw;
+    border-radius: 3px;
+    border : 0.5px solid rgba(0, 0, 0, 0.2);
+    outline : none
+}
+
+#input input:focus{
+    border : 2px solid var(--primary-blue);
+    outline: none;
+    background-color : rgba(217, 217, 217, 0.2);
+}
+
+.divider{
+    border-left : 2px solid #000;
+}
+
+.contact-details{
+    width : 45vw;
+}
+
+.submit-btn{
+    width : 20vw;
+    height : 6vh;
+    font-size: 1.2rem;
+    background-color : var(--primary-blue);
+    color : var(--primary-yellow);
+    border-radius: 10px;
+    margin : 5vh 2.5vw;
+    border: none;
+}
+
+.submit-btn:focus{
+    cursor:pointer;
+}

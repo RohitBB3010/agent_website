@@ -1,6 +1,9 @@
+*{
+    box-sizing: border-box;
+}
 
 .home{
-    height : 40vh;
+    height : 50vh;
     margin : 20vh 7vw;
     display: flex;
     flex-direction: row;
