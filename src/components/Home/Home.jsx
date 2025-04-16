@@ -1,10 +1,10 @@
 import './Home.css';
-import StatPhoto1 from '../assets/banner/banner-photo1.jpg';
-import StatPhoto2 from '../assets/banner/banner-photo2.jpg';
-import StatPhoto3 from '../assets/banner/banner-photo3.jpg';
+import StatPhoto1 from '../../assets/banner/banner-photo1.jpg';
+import StatPhoto2 from '../../assets/banner/banner-photo2.jpg';
+import StatPhoto3 from '../../assets/banner/banner-photo3.jpg';
 import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { db } from '../firebase.js';
+import { db } from '../../firebase.js';
 
 export default function Home() {
     const [stats, setStats] = useState({

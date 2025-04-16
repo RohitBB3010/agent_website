@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
-import { db } from '../firebase';
+import { db } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { FaFacebook, FaInstagram, FaMailchimp, FaPhoneAlt } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Testimonials.css';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../firebase';
+import { db } from '../../firebase';
 
 export default function Testimonials() {
     const [testimonials, setTestimonials] = useState([]);
