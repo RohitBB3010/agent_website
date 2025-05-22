@@ -59,7 +59,7 @@ export default function Contact (){
     }
 
     return(
-        <div className="contact">
+        <div className="contact" id="contact">
             <div className="contact-title"> Contact Us </div>
             <span className="contact-text"> Reach out to us via phone, email or simply fill out the form !!! </span>
             <div className='contact-space'>
@@ -78,7 +78,7 @@ export default function Contact (){
                         <input value={formInput.phone} onChange={(e) => { handleInputChange(e.target.value, 'phone' ); }} type='phone' id='input-field'/>
                     </div>
                     <div className="insurance-type" id='input'>
-                        <span id='input-text'> Enter phone number </span>
+                        <span id='input-text'> Pick inquiry category </span>
                         <select value={formInput.insuranceTypeInterested} onChange={(event) => { handleInputChange(event.target.value, 'insuranceTypeInterested'); }} id='input-field' >
                             <option value="">--Select an Option--</option>
                             <option value="life-insurance">Life Insurance</option>

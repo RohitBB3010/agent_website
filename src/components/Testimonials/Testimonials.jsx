@@ -34,7 +34,7 @@ export default function Testimonials() {
                 <span className="testimonials-title"> What Our Clients Say About Us </span>
                 <div className='testimonials-array'>
                     { testimonials.map((testimonyObj) => {
-                        return <TestimonialCard {...testimonyObj} />
+                        return <TestimonialCard {...testimonyObj} key={testimonyObj.client_name} />
                     })}
                 </div>
             </div>
@@ -51,7 +51,7 @@ function TestimonialCard({relation_years, client_name, insurance_type, testimony
                 <span className='relation-years'> { relation_years} years</span>
             </div>
             <div className='insurance-type'>
-                { insurance_type}
+                { insurance_type }
             </div>
             <p className='testimony'> "{testimony}" </p>
         </div>

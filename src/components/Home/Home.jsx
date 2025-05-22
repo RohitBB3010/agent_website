@@ -35,14 +35,14 @@ export default function Home() {
             setStats({
                 "Claim Success Rate" : Math.floor(claim_success_rate),
                 "Years Of Experience" : years_of_experience,
-                "Customers" : num_of_customers
+                "Satisifed Customers" : num_of_customers
             });
         }
         fetchStats();
     }, []);
 
     return(
-        <div className="home">
+        <div className="home" id='home'>
             <div className="content">
                 <div className="title-home">
                     <div id='title1'>Covered for life’s twists.</div>

@@ -12,11 +12,11 @@ export default function Navbar(){
                 </div>
             </div>
             <ul className="navbar-right">
-                <li> Home </li>
-                <li> Plans </li>
-                <li> Testimonials </li>
-                <li> FAQs </li>
-                <li> Contact Us </li>
+                <li> <a href='#home'> Home </a></li>
+                <li> <a href='#plans'> Plans </a></li>
+                <li> <a href='#testimonials'> Testimonials </a></li>
+                <li> <a href='#faqs'> FAQs </a></li>
+                <li> <a href='#contact'> Contact Us </a></li>
             </ul>
         </div>   
     );

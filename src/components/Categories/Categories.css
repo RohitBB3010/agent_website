@@ -1,0 +1,30 @@
+.categories{
+    padding : 3vh 7vw;
+    background-color: rgba(24, 74, 156, 0.2);
+}
+
+.categories-title{    font-size: 2rem;
+    font-weight: bold;
+}
+
+.categories-list{
+    list-style: none;
+    margin-top : 2vh;
+    display: flex;
+}
+
+.category-button{
+    all : unset;
+    padding : 1vh 1vw;
+    border-radius: 15vw;
+    border: 0.1vh solid black;
+    margin-right : 2vh;
+    /* background-color : rgba(24, 74, 156, 0.2); */
+    cursor: pointer;
+}
+
+#is-selected{
+    background-color: var(--primary-yellow);
+    color: white;
+    border : 0.1vh solid white;
+}
