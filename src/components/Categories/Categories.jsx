@@ -5,7 +5,7 @@ import './Categories.css';
 
 export default function Categories(){
 
-    const [plans, setPlans] = useState([]);
+    const [plans, setPlans] = useState({});
     const [ selectedCategory, setSelectedCategory ] = useState('protect-my-family');
 
     useEffect(() => {
@@ -44,13 +44,33 @@ export default function Categories(){
             </div>
             <ol className="categories-list">
                 { Object.keys(plans).map((category) => {
-                    console.log(category);
-                    console.log(selectedCategory);
                     return <button onClick={() => {
                         setSelectedCategory(category);
                     }} className='category-button' id={category === selectedCategory ? 'is-selected' : '' }> {modifyString(category)} </button>
                 }) }
             </ol>
+            <div className="category-plans">
+                { Array.isArray(plans[selectedCategory]) ? plans[selectedCategory].map((plan) => {
+         
+                    return <PlanCard plan={plan} />
+                }) : <p> Loading plans...</p> }
+            </div>
         </div>
     );
 };
+
+function PlanCard( {plan} ){
+
+    console.log("Plan is : " + JSON.stringify(plan));
+
+    return(
+        <div className="plan-card">
+            <div className="plan-name"> { plan.name } </div>
+            <ol className="plan-benefits">
+                { plan.benefits.map((benefit) => {
+                    return <div className="benefit"> {benefit} </div>
+                }) }
+            </ol>
+        </div>
+    );
+}

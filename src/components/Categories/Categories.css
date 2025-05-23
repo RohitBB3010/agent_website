@@ -28,3 +28,21 @@
     color: white;
     border : 0.1vh solid white;
 }
+
+.category-plans{
+    display: flex;
+    flex-wrap: true;
+    flex-direction: row;
+}
+
+/* CSS for plan card */
+
+.plan-card{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    padding : 2vh 2vw;
+    border: 0.1vh solid black;
+    border-radius: 1vw;
+    margin : 2vh 1vw;
+}
