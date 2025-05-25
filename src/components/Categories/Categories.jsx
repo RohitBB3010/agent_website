@@ -1,6 +1,7 @@
 import {doc, getDoc} from 'firebase/firestore';
 import { db } from '../../firebase.js';
 import { useState, useEffect } from 'react';
+import { FaCheck } from 'react-icons/fa';
 import './Categories.css';
 
 export default function Categories(){
@@ -68,7 +69,12 @@ function PlanCard( {plan} ){
             <div className="plan-name"> { plan.name } </div>
             <ol className="plan-benefits">
                 { plan.benefits.map((benefit) => {
-                    return <div className="benefit"> {benefit} </div>
+                    return <div className="benefit"> 
+                        <div className="tick">
+                            <FaCheck color='blue'/>
+                        </div>
+                        <p> {benefit} </p>
+                    </div>
                 }) }
             </ol>
         </div>
