@@ -1,80 +1,220 @@
 @import url('../../variables.css');
 
-*{
-    padding: 0;
-    margin : 0;
-    font-family: 'Poppins', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
-/* .navbar-container{
-    display: flex;
-    justify-content: space-between;
-    padding: 3em 4em 2em 0em;
-    height:5vh;
-    position: fixed;
-    background-color: #ffff;
-    z-index: 1000;
-    width: 100vw;
-} */
 
 .navbar-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    height: 70px; /* give it a fixed height */
-    width: 100%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* optional */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* vertical center all children */
+  padding: 0.8rem 1.5rem;
+  height: 70px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Left Side */
 .navbar-left {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 2.5rem;
+  display: flex;
+  align-items: center; /* vertical center logo + title */
+  gap: 0.5rem;
+  flex: 1;
 }
-  
+
 .navbar-left img {
-    margin-top: 1rem;
-    width: 100px; 
-    height: auto;
+  width: 60px;
+  height: auto;
+  margin-top: 0; /* reset any margin pushing it up */
+  vertical-align: middle;
 }
 
-.title{
-    display: flex;
-    align-items: center;
+.title {
+  display: flex;
+  align-items: center; /* vertical center the text */
+  font-size: 1.4rem;
+  white-space: nowrap;
 }
 
-#insurance{
-    color: var(--primary-blue);
+#insurance {
+  color: var(--primary-blue);
 }
 
-#adda{
-    color : var(--primary-yellow);
+#adda {
+  color: var(--primary-yellow);
+  margin-left: 4px;
 }
 
-.navbar-right{
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.1rem;
+/* Nav Links */
+.navbar-right {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.1rem;
+  align-items: center;
 }
 
 .navbar-right li a {
-    text-decoration: none;
-    color: var(--primary-blue);
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    display: inline-block;
+  text-decoration: none;
+  color: var(--primary-blue);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  transition: color 0.3s;
 }
-  
+
 .navbar-right li a:hover {
+  color: var(--primary-yellow);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+}
+
+/* Responsive: Tablet and below */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+  }
+
+  .navbar-right {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    background-color: white;
+    display: none;
+    z-index: 1000;
+  }
+
+  .navbar-right.active {
+    display: flex;
+  }
+
+  .navbar-right li {
+    width: 100%;
+    padding: 0.6rem 0;
+  }
+
+  .navbar-right li a {
+    width: 100%;
+    display: block;
+  }
+
+  .navbar-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  #insurance,
+  #adda {
+    white-space: nowrap;
+  }
+}
+
+/* Responsive: Mobile small devices */
+@media (max-width: 425px) {
+  .navbar-container {
+    height: 50px;
+    padding: 0 1rem;
+  }
+
+  .navbar-left {
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .navbar-left img {
+    width: 35px;
+    margin-top: 0;
+  }
+
+  .title {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  #insurance {
+    color: var(--primary-blue);
+  }
+
+  #adda {
     color: var(--primary-yellow);
+    margin-left: 2px;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: 1rem;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+  }
+
+  .navbar-right {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .navbar-right.active {
+    display: flex;
+  }
+
+  .navbar-right li {
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+
+  .navbar-right li a {
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+    padding: 0.3rem 0;
+  }
 }

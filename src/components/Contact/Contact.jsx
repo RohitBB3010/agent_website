@@ -97,12 +97,37 @@ export default function Contact (){
                 </div>
                 <div className="divider" />
                 <div className="contact-details"> 
-                    <div className="contact-details-text"> Contact us at any of the sources below and we would resond within 24 hours. We are at your service 24*7</div>
-                    <p id='detail' className='phone-detail'><FaPhoneAlt /> +91 93261 67774 / +91 99879 98424  </p>
-                    <p id='detail' className='email-detail'><MdEmail /> +91 93261 67774 / +91 99879 98424  </p>
-                    <p id='detail' className='instagram-detail'><FaInstagram /> +91 93261 67774 / +91 99879 98424  </p>
-                    <p id='detail' className='facebook-detail'><FaFacebook /> +91 93261 67774 / +91 99879 98424  </p>
-                </div>
+  <div className="contact-details-text">
+    Contact us at any of the sources below and we will respond within 24 hours. We are at your service 24×7
+  </div>
+
+  <p id='detail' className='phone-detail'>
+    <a href="tel:+919326167774" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <FaPhoneAlt /> +91 93261 67774
+    </a> / 
+    <a href="tel:+919987998424" style={{ textDecoration: 'none', color: 'inherit' }}>
+      +91 99879 98424
+    </a>
+  </p>
+
+  <p id='detail' className='email-detail'>
+    <a href="mailto:info.insuranceadda.in@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <MdEmail /> info.insuranceadda.in@gmail.com
+    </a>
+  </p>
+
+  <p id='detail' className='instagram-detail'>
+    <a href="https://www.instagram.com/insurance_adda2b" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <FaInstagram /> insurance_adda2b
+    </a>
+  </p>
+
+  <p id='detail' className='facebook-detail'>
+    <a href="https://www.facebook.com/bhandwalkarb" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <FaFacebook /> Kiran Bhandwalkar
+    </a>
+  </p>
+</div>
             </div>
         </div>
     );
