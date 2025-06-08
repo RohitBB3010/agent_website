@@ -140,21 +140,20 @@
 
 /* Prevent horizontal scroll */
 body, html {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   overflow-x: hidden;
 }
 
 .categories {
   padding: 3vh 5vw;
   background-color: rgba(24, 74, 156, 0.2);
-  max-width: 1200px;
-  margin: 0 auto;
+  /* max-width: 1200px; */
+  margin: 0 0;
 }
 
 .categories-title {
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
 }
 
 .categories-list {
@@ -162,7 +161,7 @@ body, html {
   margin-top: 2vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
   gap: 1rem;
   padding: 0;
 }
@@ -296,7 +295,7 @@ body, html {
 /* Large screens - 1440px and above */
 @media (min-width: 1440px) {
   .categories {
-    max-width: 1140px; /* common container width */
+    /* max-width: 1140px; */
     padding-left: 10vw;
     padding-right: 10vw;
     margin-left: auto;
