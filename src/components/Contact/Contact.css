@@ -1,4 +1,4 @@
-*{
+/* *{
     box-sizing: border-box;
 }
 
@@ -93,4 +93,178 @@
 
 .phone-detail{
     font-weight: bold;
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+.contact {
+    padding: 3vh 7vw;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.contact-space {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#input {
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#input span#input-text {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+#input input,
+select {
+    width: 100%;
+    height: 5vh;
+    padding: 0.5vh 0.5vw;
+    border-radius: 3px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-size: 1rem;
+}
+
+#input input:focus {
+    border: 2px solid var(--primary-blue);
+    background-color: rgba(251, 196, 5, 0.05);
+}
+
+.submit-btn {
+    width: 100%;
+    max-width: 300px;
+    height: 6vh;
+    font-size: 1.2rem;
+    background-color: var(--primary-blue);
+    color: var(--primary-yellow);
+    border-radius: 10px;
+    margin: 5vh 0 0 0;
+    border: none;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.divider {
+    border-left: 1px solid #000;
+    height: 65vh;
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 280px;
+    max-width: 600px;
+    margin: 2vh 0 2vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-details-text {
+    margin-bottom: 5vh;
+    font-size: 1.1rem;
+}
+
+#detail {
+    font-size: 1.1rem;
+    margin: 3vh 0;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.phone-detail {
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+    .contact {
+        padding: 3vh 5vw;
+    }
+
+    .contact-space {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .contact-form,
+    .contact-details {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .submit-btn {
+        max-width: 100%;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .contact {
+        padding: 2vh 3vw;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-text {
+        font-size: 1rem;
+        margin-bottom: 2vh;
+    }
+
+    #input input,
+    select {
+        height: 6vh;
+        font-size: 1rem;
+        padding: 0.6vh 0.8vw;
+    }
+
+    .submit-btn {
+        height: 7vh;
+        font-size: 1.1rem;
+    }
+
+    #detail {
+        font-size: 1rem;
+        margin: 2vh 0;
+        gap: 0.5rem;
+    }
 }

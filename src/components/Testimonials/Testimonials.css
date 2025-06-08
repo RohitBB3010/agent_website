@@ -1,5 +1,5 @@
-.testimonials{
-    /* background-color: rgba(24, 74, 156, 0.1); */
+/* .testimonials{
+    background-color: rgba(24, 74, 156, 0.1);
     padding: 5vh 7vw;
 }
 
@@ -44,4 +44,130 @@
 
 .testimony{
     margin: 2vh 0vh;
+} */
+
+.testimonials {
+    padding: 5vh 7vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.testimonials-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.testimonials-array {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    border: 0.1px solid rgba(128, 128, 128, 0.3);
+    padding: 2vh 1vw;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.client-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.relation-years {
+    font-size: 1.3rem;
+    margin-left: 0.3rem;
+    color: #555;
+}
+
+.name-years {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.insurance-type {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1vh;
+}
+
+.testimony {
+    margin: 2vh 0;
+    font-style: italic;
+    color: #444;
+}
+
+/* More padding on tablets and smaller */
+
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 4vh 5vw;
+    }
+
+    .testimonials-array {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .testimonial-card {
+        padding: 3vh 3vw;
+    }
+
+    .client-name {
+        font-size: 1.3rem;
+    }
+
+    .relation-years {
+        font-size: 1.1rem;
+    }
+
+    .insurance-type {
+        font-size: 1rem;
+    }
+
+    .testimony {
+        font-size: 0.95rem;
+        margin: 1.5vh 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        padding: 3vh 3vw;
+    }
+
+    .testimonials-array {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testimonial-card {
+        padding: 4vh 4vw;
+    }
+
+    .testimonials-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Large screen side margins */
+
+@media (min-width: 1440px) {
+    .testimonials {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
 }
