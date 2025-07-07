@@ -1,12 +1,38 @@
-# React + Vite
+# 🛡️ InsuranceAdda
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and informative website designed to help users understand, explore, and connect with a variety of insurance services. The platform offers details on life, health, motor, and other insurance policies while providing a clear call-to-action for service inquiries or consultations.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Preview
 
-## Expanding the ESLint configuration
+[[🔗 Visit Website](https://insuranceadda.info/)](#) <!-- (replace # with your actual URL or GitHub Pages link if hosted) -->
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 📄 Informative pages for different insurance types (life, health, vehicle, etc.)
+- 💬 Contact section to request quotes or consultations
+- 📱 Fully responsive design for desktop and mobile
+- ⚡ Fast-loading and SEO-friendly layout
+
+---
+
+## 🧰 Tech Stack
+
+| Layer      | Technologies             |
+|------------|--------------------------|
+| **Frontend** | HTML, CSS, JavaScript   |
+| **Styling**  | Bootstrap (or update if you used Tailwind, etc.) |
+| **Deployment** | GitHub Pages / Netlify / Custom Hosting |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/insurance-adda.git
+cd insurance-adda
